@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/rest/api" name="TestAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/calls">
+        <inSequence>
+            <payloadFactory media-type="xml">
+                <format>
+                    <getQuote>
+                        <request>
+                            <symbol>$1</symbol>
+                        </request>
+                    </getQuote>
+                </format>
+                <args>
+                    <arg value="TEST"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
